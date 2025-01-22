@@ -1,0 +1,29 @@
+GET http://localhost:5074/games
+###
+
+GET http://localhost:5074/games/2
+###
+
+POST http://localhost:5074/games
+Content-Type: application/json
+
+{
+    "name": "Street Fighter II",
+    "genreId": 1,
+    "price":  9.99,
+    "releaseDate": "2001-09-10"
+}
+
+###
+PUT http://localhost:5074/games/2
+Content-Type: application/json
+
+{
+    "name": "Street Fighter III",
+    "genreId": 1,
+    "price": 20.99,
+    "releaseDate": "1993-03-01"
+}
+
+###
+DELETE http://localhost:5074/games/4
