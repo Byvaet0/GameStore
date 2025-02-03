@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ipPFX4ElfzE=",
+  "dgSpecHash": "29PUvgWHHOY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\Proj\\GameStore\\GameStore.Api\\GameStore.Api.csproj",
+  "projectFilePath": "C:\\Users\\Oleg\\Desktop\\MyProj\\GameStore\\GameStore.Api\\GameStore.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Oleg\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Oleg\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Oleg\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\Oleg\\.nuget\\packages\\microsoft.build.framework\\17.8.3\\microsoft.build.framework.17.8.3.nupkg.sha512",

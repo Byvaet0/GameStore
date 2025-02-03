@@ -25,6 +25,8 @@ app.UseCors("AllowAllOrigins");
 
 app.MapGamesEndpoints();
 app.MapGenresEndpoints();
+app.MapUsersEndpoints();
+
 
 app.MigrateDbAsync();  //автоматически создаст БД, если ее не будет
 

@@ -27,3 +27,33 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:5074/games/4
+
+
+
+//USERS
+
+###
+GET http://localhost:5074/users
+
+###
+POST http://localhost:5074/users
+Content-Type: application/json
+
+{
+  "Username": "newuser333555",
+  "Password": "password123",
+  "RoleId": 1
+}
+
+###
+PUT http://localhost:5074/users/1
+Content-Type: application/json
+
+{
+  "Id": 1,
+  "Username": "updateduser123321",
+  "RoleId": 2
+}
+###
+DELETE http://localhost:5074/users/3
+
