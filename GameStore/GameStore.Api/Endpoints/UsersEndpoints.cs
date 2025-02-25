@@ -2,6 +2,9 @@ using GameStore.Api.Data;
 using GameStore.Api.Dtos;
 using GameStore.Api.Entities;
 using GameStore.Api.Mapping;
+using GameStore.Api.Models;
+using GameStore.Api.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Api.Endpoints;
@@ -36,8 +39,8 @@ public static class UsersEndpoints
             return user is null ? Results.NotFound() : Results.Ok(user.ToDto(dbContext)); // Используем ToDto с dbContext
         });
 
-       // POST /users - Создать нового пользователя
-group.MapPost("/", async (UserRegistrationDto newUser, GameStoreContext dbContext) =>
+     // POST /users - Создать нового пользователя
+group.MapPost("/", [Authorize(Roles = "Admin")] async (UserRegistrationDto newUser, GameStoreContext dbContext) =>
 {
     if (await dbContext.Users.AnyAsync(u => u.Username == newUser.Username))
     {
@@ -54,7 +57,7 @@ group.MapPost("/", async (UserRegistrationDto newUser, GameStoreContext dbContex
     var user = new User
     {
         Username = newUser.Username,
-        PasswordHash = newUser.Password, // Не забудьте хэшировать пароль перед сохранением
+         PasswordHash = BCrypt.Net.BCrypt.HashPassword(newUser.Password), // Хешируем пароль
         RoleId = newUser.RoleId,
         Role = role // Присваиваем роль пользователю
     };
@@ -67,7 +70,7 @@ group.MapPost("/", async (UserRegistrationDto newUser, GameStoreContext dbContex
 
 
         // PUT /users/{id} - Обновить пользователя
-        group.MapPut("/{id}", async (int id, UserDto updatedUser, GameStoreContext dbContext) =>
+        group.MapPut("/{id}", [Authorize(Roles = "Admin")] async (int id, UserDto updatedUser, GameStoreContext dbContext) =>
         {
             var existingUser = await dbContext.Users
                 .Include(u => u.Role) // Включаем роль
@@ -86,7 +89,7 @@ group.MapPost("/", async (UserRegistrationDto newUser, GameStoreContext dbContex
         });
 
         // DELETE /users/{id} - Удалить пользователя
-        group.MapDelete("/{id}", async (int id, GameStoreContext dbContext) =>
+        group.MapDelete("/{id}", [Authorize(Roles = "Admin")] async (int id, GameStoreContext dbContext) =>
         {
             var user = await dbContext.Users.FindAsync(id);
             if (user is null)
@@ -99,6 +102,22 @@ group.MapPost("/", async (UserRegistrationDto newUser, GameStoreContext dbContex
 
             return Results.NoContent();
         });
+
+
+        //JWT
+        app.MapPost("/login", async (GameStoreContext db, AuthService authService, LoginRequest request) =>
+    {
+        var user = await db.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Username == request.Username);
+
+     if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+        {
+            return Results.Unauthorized();
+        }
+
+         var token = authService.GenerateJwtToken(user);
+         return Results.Ok(new { Token = token });
+    });
+
 
         return group;
     }

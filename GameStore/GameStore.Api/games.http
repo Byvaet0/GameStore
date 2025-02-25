@@ -36,6 +36,9 @@ DELETE http://localhost:5074/games/4
 GET http://localhost:5074/users
 
 ###
+GET http://localhost:5074/users/2
+
+###
 POST http://localhost:5074/users
 Content-Type: application/json
 

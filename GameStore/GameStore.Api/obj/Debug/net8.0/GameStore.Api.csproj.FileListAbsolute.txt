@@ -315,3 +315,15 @@ C:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\obj\Debug\net8.0\GameStore.
 C:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\obj\Debug\net8.0\GameStore.Api.genruntimeconfig.cache
 C:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\obj\Debug\net8.0\ref\GameStore.Api.dll
 c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\StackExchange.Redis.dll
+c:\Users\Oleg\Desktop\MyProj\GameStore\GameStore.Api\bin\Debug\net8.0\RabbitMQ.Client.dll
